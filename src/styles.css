@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Raleway, "Helvetica Neue", sans-serif; }
+
+@layer base {
+    h1, h2 {
+        @apply font-semibold
+    }
+}
+
+@layer components {
+    .container {
+        @apply max-w-[90%] mx-auto
+    }
+}
+
+
+@layer utilities {
+    .nav__menu {
+        @apply flex justify-center items-center text-sm gap-4 
+    }
+
+    .nav__link {
+        @apply font-semibold text-gray-500 cursor-pointer transition-all hover:text-blue-500
+    }
+    
+    .nav__link--active {
+        @apply text-blue-500
+    }
+
+    .nav__container {
+        @apply container grid grid-cols-3 items-center justify-between
+    }
+    
+    
+}
