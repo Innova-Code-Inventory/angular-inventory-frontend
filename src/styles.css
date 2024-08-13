@@ -6,7 +6,11 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Raleway, "Helvetica Neue", sans-serif; }
 
 @layer base {
-    h1, h2 {
+    h1 {
+        @apply font-semibold text-2xl
+    }
+
+    h2 {
         @apply font-semibold
     }
 }
@@ -14,6 +18,13 @@ body { margin: 0; font-family: Raleway, "Helvetica Neue", sans-serif; }
 @layer components {
     .container {
         @apply max-w-[90%] mx-auto
+    }
+
+    .search-product-input {
+        background: linear-gradient(66deg, #e6fbfe 0%, #edddfb 100%);
+        position: relative;
+        max-height: 100px;
+        height: 100%;
     }
 }
 

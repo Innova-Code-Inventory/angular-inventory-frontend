@@ -5,7 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './product-list-page.component.html',
-  styleUrl: './product-list-page.component.css'
 })
 export class ProductListPageComponent {
 
