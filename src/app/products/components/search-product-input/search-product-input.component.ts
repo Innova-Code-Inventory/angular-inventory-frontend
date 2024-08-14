@@ -5,7 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './search-product-input.component.html',
-  styleUrl: './search-product-input.component.css'
 })
 export class SearchProductInputComponent {
 

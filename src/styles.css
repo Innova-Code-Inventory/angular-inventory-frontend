@@ -13,6 +13,10 @@ body { margin: 0; font-family: Raleway, "Helvetica Neue", sans-serif; }
     h2 {
         @apply font-semibold
     }
+
+    li {
+        list-style: none;
+    }
 }
 
 @layer components {
@@ -35,16 +39,27 @@ body { margin: 0; font-family: Raleway, "Helvetica Neue", sans-serif; }
     }
 
     .nav__link {
-        @apply font-semibold text-gray-500 cursor-pointer transition-all hover:text-blue-500
+        @apply font-semibold text-gray-500 cursor-pointer transition-all hover:text-indigo-500
     }
     
     .nav__link--active {
-        @apply text-blue-500
+        @apply text-indigo-500
     }
 
     .nav__container {
         @apply container grid grid-cols-3 items-center justify-between
     }
     
-    
+    .product__list {
+        @apply grid grid-cols-4 gap-4
+    }
+
+    .product__card {
+        @apply bg-white rounded-sm  cursor-pointer
+    }
+
+    .card {
+        @apply w-full bg-red-300 overflow-hidden rounded-lg shadow-lg
+    }
+
 }
