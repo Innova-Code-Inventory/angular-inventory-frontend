@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HeaderPageComponent } from "../../../shared/components/header-page/header-page.component";
+import { CategoriesService } from '../../services/categories.service';
 
 @Component({
   selector: 'app-categories-page',
@@ -8,5 +9,5 @@ import { HeaderPageComponent } from "../../../shared/components/header-page/head
   templateUrl: './categories-page.component.html',
 })
 export class CategoriesPageComponent {
-
+  public categoriesService = inject(CategoriesService);
 }
