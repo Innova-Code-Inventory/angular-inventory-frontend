@@ -4,9 +4,11 @@
             <h1>{{ title }}</h1>
             <p>{{ description }}</p>
         </div>
-        <button style="box-shadow: none;" mat-fab extended>
-            <mat-icon>add</mat-icon>
-            {{ btnTitle }}
-        </button>
+        <a [routerLink]='pathname'>
+            <button style="box-shadow: none;" mat-fab extended>
+                <mat-icon>add</mat-icon>
+                {{ btnTitle }}
+            </button>
+        </a>
     </div>
 </section>

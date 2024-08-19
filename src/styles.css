@@ -25,7 +25,7 @@ body { margin: 0; font-family: Raleway, "Helvetica Neue", sans-serif; }
     }
 
     .search-product-input {
-        background: linear-gradient(66deg, #e6fbfe 0%, #edddfb 100%);
+        background: linear-gradient(66deg, #fecfb8 0%, #ff9898 100%);
         position: relative;
         max-height: 100px;
         height: 100%;

@@ -1,8 +1,10 @@
 <section class="pt-8 pb-8">
     <div class="container">
         <ul class="product__list">
-            @for (item of [0,1,2,3,4,5,6,7]; track item) {
-                <app-product-card />
+            @for (product of products; track product.image) {
+                <app-product-card 
+                    [product]="product"
+                />
             } @empty {
                 <p>There are no items.</p>
             }
