@@ -1,6 +1,9 @@
-<div class="product__card" mat-ripple>
-    <img [src]="product.image"
-        alt="" srcset="">
+<a [routerLink]="'/products' + product.slug" class="product__card" mat-ripple>
+    <img
+        [src]="product.image"
+        [alt]="product.name"
+        [style]="{ viewTransitionName: 'producto-' + product.id}"
+      >
     <div class="p-2">
         <h3 class="font-medium">{{ product.name }}</h3>
         <p class="text-gray-500 text-sm line-clamp-1 ">
@@ -8,4 +11,4 @@
         </p>
         <p class="text-sm font-bold">US${{ product.price }}</p>
     </div>
-</div>
+</a>

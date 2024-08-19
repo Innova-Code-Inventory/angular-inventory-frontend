@@ -1,5 +1,15 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { computed, inject, Injectable, signal } from '@angular/core';
+import { environment } from "../../../environments/environment";
+import { CategoriesResponse } from '../interfaces/categories-response';
+import { Category } from '../interfaces/category';
+
+
+interface State {
+  loading: boolean,
+  categories: Category[]
+}
+
 
 @Injectable({
   providedIn: 'root'
@@ -7,29 +17,48 @@ import { inject, Injectable } from '@angular/core';
 export class CategoriesService {
 
   public http = inject(HttpClient);
-  private API_URL = "http://localhost:8000/api"
 
-  constructor() { 
+  #state = signal<State>({
+    loading: true,
+    categories: []
+  })
+
+  public categories = computed(() => this.#state().categories);
+  public loading = computed(() => this.#state().loading);
+
+
+
+
+
+  constructor() {
     this.findAll()
   }
 
   findAll() {
-    console.log("first")
+    this.http.get<CategoriesResponse>(environment.API_URL + '/categories')
+      .subscribe(res => {
+
+        this.#state.set({
+          loading: false,
+          categories: res.categories
+        })
+
+      })
   }
 
   findOne() {
 
   }
 
-  create(){
+  create() {
 
   }
 
-  remove(){
+  remove() {
 
   }
 
-  update(){
+  update() {
 
   }
 
