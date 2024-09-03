@@ -10,10 +10,5 @@ import { ProductsService } from '../../service/products.service';
   templateUrl: './product-list-page.component.html',
 })
 export class ProductListPageComponent {
-  public productsService = inject(ProductsService);
-  
-  constructor(){
-    // this.productsService
-  }
-  
+  public productsService = inject(ProductsService);  
 }

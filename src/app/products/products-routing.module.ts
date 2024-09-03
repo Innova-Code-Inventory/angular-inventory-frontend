@@ -11,7 +11,7 @@ const routes: Routes = [
     component: ProductListPageComponent,
   },
   {
-    path: ':slug',
+    path: 'view/:slug',
     component: ProductPageComponent
   },
   {

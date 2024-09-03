@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatGridList } from '@angular/material/grid-list';
 import { ProductCardComponent } from "../product-card/product-card.component";
 import { products } from '../../../../constants/products';
+import { Product } from '../../interfaces/product';
 
 @Component({
   selector: 'app-product-list',
@@ -11,6 +12,6 @@ import { products } from '../../../../constants/products';
 })
 export class ProductListComponent {
 
-  public productos = products
-
+  @Input({ required: true })
+  products!: Product[]
 }

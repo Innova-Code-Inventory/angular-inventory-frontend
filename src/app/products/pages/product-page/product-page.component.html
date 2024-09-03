@@ -1,15 +1,15 @@
 <section class="pt-16">
   <div class="grid md:grid-cols-2 items-center max-w-[50%] mx-auto">
     <div>
-      <h1 class="mb-4">{{ product.name }}</h1>
+      <h1 class="mb-4">{{ product()?.name }}</h1>
       <h2>Descripcion:</h2>
-      <p>{{ product.description }}</p>
+      <p>{{ product()?.description }}</p>
 
       <p>Stock: 16u.</p>
     </div>
 
-    <img class="ml-auto" [src]="product.image" height="400" width="400"
-      [style]="{ viewTransitionName: 'producto-'+ product.id }">
+    <img class="ml-auto" [src]="product()?.image" height="400" width="400"
+      [style]="{ viewTransitionName: 'producto-'+ product()?.id }">
 
   </div>
 </section>

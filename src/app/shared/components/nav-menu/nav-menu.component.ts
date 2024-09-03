@@ -7,7 +7,6 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   standalone: true,
   imports: [RouterLink, RouterLinkActive, MatButtonModule],
   templateUrl: './nav-menu.component.html',
-  styleUrl: './nav-menu.component.css'
 })
 export class NavMenuComponent {
 

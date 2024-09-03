@@ -6,46 +6,39 @@ import { Category } from '../interfaces/category';
 
 
 interface State {
-  loading: boolean,
+  isLoading: boolean,
   categories: Category[]
 }
 
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
 export class CategoriesService {
-
+  
   public http = inject(HttpClient);
-
-  #state = signal<State>({
-    loading: true,
-    categories: []
-  })
-
-  public categories = computed(() => this.#state().categories);
-  public loading = computed(() => this.#state().loading);
-
-
-
-
 
   constructor() {
     this.findAll()
   }
 
+
+  #state = signal<State>({
+    isLoading: true,
+    categories: []
+  })
+
+  public categories = computed(() => this.#state().categories);
+  public isLoading = computed(() => this.#state().isLoading);
+
   findAll() {
     this.http.get<CategoriesResponse>(environment.API_URL + '/categories')
       .subscribe(res => {
-
         this.#state.set({
-          loading: false,
+          isLoading: false,
           categories: res.categories
         })
-
       })
   }
-
+  
   findOne() {
 
   }
